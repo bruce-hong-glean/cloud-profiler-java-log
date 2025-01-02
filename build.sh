@@ -100,7 +100,7 @@ cd "$(dirname "$0")"
 LOG_FILE="${BUILD_TEMP_DIR}/build.log"
 
 echo "Log file: ${LOG_FILE}"
-trap "{ echo 'FAILED: see ${LOG_FILE} for details' ; exit 1; }" ERR
+trap "{ echo 'FAILED: see ${LOG_FILE}: '; cat ${LOG_FILE}; exit 1; }" ERR
 
 mkdir -p "${BUILD_TEMP_DIR}"
 
